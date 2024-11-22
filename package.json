@@ -1,0 +1,46 @@
+{
+  "name": "@ultritium/react-pwa-skeleton",
+  "version": "0.0.1",
+  "description": "PWA (Progressive Web App) Skeleton with react and redux",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
+    "@ultritium/validate": "^1.3.1",
+    "axios": "^1.7.7",
+    "classnames": "^2.5.1",
+    "hoist-non-react-statics": "^3.3.2",
+    "immutability-helper": "^3.1.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intl": "^7.0.1",
+    "react-redux": "^9.1.2",
+    "react-router": "^7.0.1",
+    "react-router-dom": "^7.0.1",
+    "react-spinners": "^0.14.1",
+    "reactstrap": "^9.2.3",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "esbuild-plugins-node-modules-polyfill": "^1.6.8",
+    "esbuild-sass-plugin": "^3.3.1",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "fs-extra": "^11.2.0",
+    "replace-in-file": "^8.2.0",
+    "uuid": "^11.0.3"
+  },
+  "author": "barumel",
+  "license": "MIT"
+}
