@@ -1,3 +1,6 @@
+# Own data
+src/client.js
+
 # Logs
 logs
 *.log
@@ -90,7 +93,6 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
-src/client.js
 
 # Gatsby files
 .cache/

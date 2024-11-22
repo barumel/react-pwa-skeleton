@@ -3,16 +3,15 @@ import fs from 'fs-extra';
 
 import config from './config.mjs';
 import copyAndPreparePublic from './copyAndPreparePublic.mjs';
-import { buildId } from '../src/client';
+import client from '../src/client.js';
 
 (async function server() {
-  // Remove current build folder
-  fs.rmSync(config.outdir, { recursive: true, force: true });
+  // Copy files from /public folder to /dist and adjust imports
   await copyAndPreparePublic({ config });
 
   const ctx = await esbuild.context({
     ...config,
-    entryPoints: [{ in: 'src/index.js', out: `index-${buildId}` }],
+    entryPoints: [{ in: 'src/index.js', out: `index-${client.buildId}` }],
     minify: false
   });
   const { host, port } = await ctx.serve({

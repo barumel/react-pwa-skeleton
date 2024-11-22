@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import store from './Store';
-import { buildId } from './client';
+import client from './client';
 
 /**
  * Init the service worker
@@ -13,7 +13,7 @@ import { buildId } from './client';
  */
 async function initServiceWorker() {
   try {
-    const registration = await navigator.serviceWorker.register(`/public/service-worker-${buildId}.js`);
+    const registration = await navigator.serviceWorker.register(`/service-worker-${client.buildId}.js`);
     console.info('Service worker registration successful:', registration);
 
     return registration;

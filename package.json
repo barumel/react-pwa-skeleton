@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "build": "node ./build/createClientInfo.mjs && node ./build/build-service-worker.mjs && node ./build/build.mjs",
-    "serve": "node ./build/createClientInfo.mjs && node ./build/build-service-worker.mjs && node ./build/serve.mjs",
+    "build": "rm -rf ./dist && node ./build/createClientInfo.mjs && node ./build/build-service-worker.mjs && node ./build/build.mjs",
+    "serve": "rm -rf ./dist && node ./build/createClientInfo.mjs && node ./build/build-service-worker.mjs && node ./build/serve.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

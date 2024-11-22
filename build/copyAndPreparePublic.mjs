@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import { replaceInFile } from 'replace-in-file';
 
-import { buildId } from '../src/client.js';
+import client from '../src/client.js';
 
 /**
  * Copy the contents of the public folder (which contains the index.html file) to the build folder
@@ -17,8 +17,8 @@ export default async function copyAndPreparePublic({ config }) {
 
   // Prepare header for index.html
   const content = `
-      <link rel="stylesheet" href="/index-${buildId}.css" type="text/css">
-      <script src="/index-${buildId}.js" type="module"></script>
+      <link rel="stylesheet" href="/index-${client.buildId}.css" type="text/css">
+      <script src="/index-${client.buildId}.js" type="module"></script>
     </head>
   `;
 
