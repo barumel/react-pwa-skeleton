@@ -1,10 +1,5 @@
 import { nodeModulesPolyfillPlugin } from 'esbuild-plugins-node-modules-polyfill';
 import { sassPlugin } from 'esbuild-sass-plugin';
-import { v4 } from 'uuid';
-import lodash from 'lodash';
-
-const { last } = lodash;
-const indexFilename = `index-${last(v4().split('-'))}`;
 
 const config = {
   loader: {
@@ -19,7 +14,7 @@ const config = {
     '.OTF': 'dataurl'
   },
   bundle: true,
-  entryPoints: [{ in: 'src/index.js', out: indexFilename }],
+  entryPoints: [{ in: 'src/index.js', out: 'index' }],
   format: 'esm',
   // jsx: 'automatic',
   minify: true,

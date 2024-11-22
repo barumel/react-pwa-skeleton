@@ -1,8 +1,7 @@
-import lodash from 'lodash';
 import fs from 'fs-extra';
 import { replaceInFile } from 'replace-in-file';
 
-const { chain, get } = lodash;
+import { buildId } from '../src/client.js';
 
 /**
  * Copy the contents of the public folder (which contains the index.html file) to the build folder
@@ -15,16 +14,11 @@ const { chain, get } = lodash;
 export default async function copyAndPreparePublic({ config }) {
   // Copy content of the public folder to dist
   fs.copySync('./public', config.outdir, { recursive: true });
-  const indexFilename = chain(config)
-    .get('entryPoints', [])
-    .find((p) => get(p, 'in') === 'src/index.js')
-    .get('out', 'index')
-    .value();
 
   // Prepare header for index.html
   const content = `
-      <link rel="stylesheet" href="/${indexFilename}.css" type="text/css">
-      <script src="/${indexFilename}.js" type="module"></script>
+      <link rel="stylesheet" href="/index-${buildId}.css" type="text/css">
+      <script src="/index-${buildId}.js" type="module"></script>
     </head>
   `;
 

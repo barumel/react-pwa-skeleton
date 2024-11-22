@@ -4,10 +4,33 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import store from './Store';
+import { buildId } from './client';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+/**
+ * Init the service worker
+ *
+ * @return  void
+ */
+async function initServiceWorker() {
+  try {
+    const registration = await navigator.serviceWorker.register(`/public/service-worker-${buildId}.js`);
+    console.info('Service worker registration successful:', registration);
+
+    return registration;
+  } catch (error) {
+    console.error(`Service worker registration failed: ${error}`);
+
+    return error;
+  }
+}
+
+(async function start() {
+  await initServiceWorker();
+
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}());
