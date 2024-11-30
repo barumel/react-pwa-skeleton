@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { IntlProvider } from 'react-intl';
 
 import App from './App';
 import store from './Store';
@@ -30,7 +31,9 @@ async function initServiceWorker() {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <Provider store={store}>
-      <App />
+      <IntlProvider messages={{}} locale="en" defaultLocale="en">
+        <App />
+      </IntlProvider>
     </Provider>
   );
 }());

@@ -63,3 +63,17 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(returnCachedOrFetchResource());
 });
+
+// SHow push notification
+self.addEventListener('push', (event) => {
+  console.log('PUSH PUSH');
+
+  async function onPush() {
+    console.log('PUSH PUSH YAY');
+    await self.registration.showNotification('Something is here', {
+      body: 'YAY',
+    });
+  }
+
+  event.waitUntil(onPush());
+});

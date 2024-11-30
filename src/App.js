@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import RequestPushPermission from './components/RequestPushPermission';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +24,8 @@ class App extends React.Component {
     return (
       <div>
         Hello Universe!
+
+        <RequestPushPermission />
       </div>
     );
   }

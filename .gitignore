@@ -1,5 +1,6 @@
 # Own data
 src/client.js
+backend/secrets/
 
 # Logs
 logs

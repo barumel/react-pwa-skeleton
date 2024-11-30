@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "init": "./bin/generateServerCert.sh && node ./bin/generateVapidKeys.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "barumel",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "fs-extra": "^11.2.0",
+    "lodash": "^4.17.21",
+    "web-push": "^3.6.7"
+  },
+  "bin": {
+    "generate-vapid-key": "bin/generateVapidKey.js",
+    "generate-server-cert": "bin/generateServerCert.sh"
+  }
+}
